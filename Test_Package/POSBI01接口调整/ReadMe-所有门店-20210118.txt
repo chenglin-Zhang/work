@@ -1,0 +1,62 @@
+更新时间：2021/01/18
+
+更新门店：所有门店
+
+值守人员：钟先龙、张呈林
+
+升级文件放置目录：\\shhsp005.aisino-wincor.com\PR\CustomerProjects\C60_ALDI\02_Build\16_安装包\60_服务部更新包\Patch_V2.13.0
+
+1.更新包: 1）TPDotnetSetupUpdateDatabase.ALDI.PATCH__V2.13.0-x86.msi
+	  2）TPDotnetSetupBackstore.ALDI.PATCH__V1.9.0-x86.msi
+
+2.回滚方案
+	备份文件：
+	1、\\TPDotnet\bin\TSALDIInventoryUpload.exe
+	2、\\TPDotnet\cfg\TSALDIInventoryUpload.xml
+	
+
+3.更新步骤:
+	BackStore Server安装：
+		1）TPDotnetSetupUpdateDatabase.ALDI.PATCH__V2.13.0-x86.msi
+		2）TPDotnetSetupBackstore.ALDI.PATCH__V1.9.0-x86.msi
+
+	重启交通灯，检查TSALDIInventoryUpload.exe进程是否启动，若没有启动，需手动启动。
+	
+
+4.日结前：否
+
+
+5.BackStore Service：是    BackStore Client：否     POS：否     Windows SCO： 否	txCollector：否	    Android SCO：否
+
+
+6.更新文件版本号:
+	1、\\TPDotnet\bin\TSALDIInventoryUpload.exe	6.0.77.14
+	2、\\TPDotnet\cfg\TSALDIInventoryUpload.xml	1KB
+
+7.本次更新内容:
+	1、优化 读取配置文件更换为数据库查询
+	2、修改 POSBI01接口调整
+
+8.更新后验证:
+	1、核对文件版本号：	TSALDIInventoryUpload.exe	6.0.77.14
+	2、核对xml文件内容：	TSALDIInventoryUpload.xml
+	<PARAMETERS>
+		<MerchandiseInventoryDaily>
+			<UploadTime>0450</UploadTime>
+        		<TimeInterval>6</TimeInterval>		
+		</MerchandiseInventoryDaily>
+		<MerchandiseInventoryChangeDocument>
+			<UploadTime>0440</UploadTime>
+			<DocumentStartDate></DocumentStartDate>
+			<DocumentEndDate></DocumentEndDate>	
+		</MerchandiseInventoryChangeDocument>
+  		<WebServiceAddress></WebServiceAddress>
+  		<WebServiceReportKey></WebServiceReportKey>
+  		<appKey></appKey>
+	</PARAMETERS>
+	3、打开Backstore>主数据维护>Web Service配置>POSBI03WebService启用。如果没有启用，需启用。
+
+9.特殊操作(如有必要):
+可选
+
+
