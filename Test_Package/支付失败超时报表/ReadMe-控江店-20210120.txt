@@ -1,0 +1,71 @@
+更新时间：2021/01/20
+
+更新门店：控江店
+
+值守人员：张呈林
+
+升级文件放置目录：\\shhsp005.aisino-wincor.com\PR\CustomerProjects\C60_ALDI\02_Build\16_安装包\60_服务部更新包\新开门店\1014控江店\控江店升级包[20210120]
+
+1.更新包:1）ALDI_ACO_V8.7.0.6.apk
+	 2）spin-ds-aco-impl-V8.8.0.5.jar
+	 3）TPDotnetSetupUpdateDatabase.ALDI.PATCH__V2.9.1-x86.msi
+	 4）TPDotnetSetupBackstore.ALDI.PATCH__V1.8.0-x86.msi
+	 5）TPDotnetSetupPos.ALDI.PATCH__V5.6.2-x86.msi
+	 6）TPDotnetSetupTPCS.ALDI-x86.msi
+
+2.回滚方案
+	备份文件：
+		备份文件[更新包内文件版本号.xlsx]内的dll、rpt、xml文件
+
+3.更新步骤:
+	Android SCO：
+		1）ALDI_ACO_V8.7.0.6.apk
+	BackStore Server安装：
+		1）spin-ds-aco-impl-V8.8.0.5.jar
+		2）TPDotnetSetupUpdateDatabase.ALDI.PATCH__V2.9.1-x86.msi
+		3）TPDotnetSetupBackstore.ALDI.PATCH__V1.9.0-x86.msi
+		4）TPDotnetSetupTPCS.ALDI-x86.msi
+		5）TPDotnetSetupPos.ALDI.PATCH__V5.6.2-x86.msi
+	Admin PC安装：
+		1）TPDotnetSetupBackstore.ALDI.PATCH__V1.9.0-x86.msi
+	POS安装：
+		1）TPDotnetSetupPos.ALDI.PATCH__V5.6.2-x86.msi
+
+	重启交通灯
+	
+
+4.日结前：否
+
+
+5.BackStore Service：是    Admin PC：是     POS：是     Windows SCO： 否	txCollector：否	    Android SCO：是
+
+
+6.更新文件版本号:
+	请查阅文件[更新包内文件版本号.xlsx]
+
+
+7.本次更新内容:
+	1、新增 Android、POS支付超时上传至BS超时报表功能
+	2、修复 优惠券多次切换导致结算出错问题
+	3、修复 扫描台硬件问题扫码会有嘟嘟的声音
+	4、修复 打印机硬件问题导致的打印文本异常
+	5、修复 美食工坊大类中无商品时，切换其他大类添加商品时，造成闪退问题
+	6、修改 是否打印小票弹窗倒计时由5秒变更为10秒
+
+8.更新后验证:
+	日结前做验证，验证后做日结。
+	 登录BackStore，查看【报表】菜单下存在【支付超时报表】节点，并正常打开。（于强验证）
+	  一线到店后通知门店先不要日结
+	  于强更新后通知一线重启安卓SCO,验证 
+	       1、安卓SCO 能正常进系统，会员可以正常登陆
+	       2、进美食工坊能正常点击各大类，大类下商品可以正常选择
+	       3、扫描台扫描商品条码，结算交易，查看打印是否正常，小票信息完整，正常开电子发票
+	       4、主界面进入补打界面，选择补打小票，查看补打小票信息完整。
+         5、人工POS上退货。
+         6、通知门店日结。
+
+
+9.特殊操作(如有必要):
+可选
+
+
