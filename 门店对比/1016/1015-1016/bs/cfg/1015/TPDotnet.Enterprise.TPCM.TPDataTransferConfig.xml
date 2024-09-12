@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransferConfig>
+  <Computername>{LocalHostName}</Computername>
+  <LocalMachineID>1015</LocalMachineID>
+  <CommunicationID>SHSPAPW01.ALDICN.LOCAL</CommunicationID>
+  <RemoteLocalMachineID>1015</RemoteLocalMachineID>
+  <RemoteCommunicationID>SHSPAPW01</RemoteCommunicationID>
+  <Transport>
+    <Channels>MSMQ</Channels>
+	<!-- special XML compression if file is larger than the given number of MB, 
+	     if the number is zero no special compression -->
+    <XMLCompression>0</XMLCompression>
+    <TPCCQueueing>true</TPCCQueueing>
+    <TPCCInternal>300,10</TPCCInternal>
+    <QueueName>private$\tpcmmessages</QueueName>
+    <Authentication>false</Authentication>
+    <MSMQRecoverable>false</MSMQRecoverable>
+    <SmtpServer>127.0.0.1</SmtpServer>
+    <SmtpPort>25</SmtpPort>
+    <RootDirectory>{WorkingDirectory}\..</RootDirectory>
+    <NoZip>.zip.exe.msi</NoZip>
+  </Transport>
+  <Cleanup>
+    <RetentionTimes>
+      <SentData>-1</SentData>
+      <ReceivedData>-1</ReceivedData>
+      <StatusData>14</StatusData>
+      <JournalData>7</JournalData>
+      <MailData>1</MailData>
+    </RetentionTimes>
+  </Cleanup>
+  <ServiceCheck>
+    <NumberOfMinutes>60</NumberOfMinutes>
+    <NumberOfQueuedFiles>10</NumberOfQueuedFiles>
+  </ServiceCheck>
+  <LogPatterns>*</LogPatterns>
+</TransferConfig>
